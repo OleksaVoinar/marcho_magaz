@@ -3,4 +3,120 @@
 @import "reset";
 @import "global";
 
+
+.header {
+  padding: 40px 0 40px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.menu {
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-item+.menu__list-item {
+    padding-left: 35px;
+  }
+
+  &__list-link {
+    padding-bottom: 2px;
+    color: $title;
+    text-transform: uppercase;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $accent;
+      border-bottom: solid 1px $accent;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    border-bottom: solid 1px $accent;
+  }
+
+}
+
+.user-nav {
+  display: flex;
+
+  &__link {
+    position: relative;
+  }
+
+  &__link+.user-nav__link {
+    padding-left: 25px;
+  }
+
+  &__num {
+    background-color: $accent;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -13px;
+    right: -13px;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    line-height: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.user-nav__link {}
+
+.user-nav__num {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import "media";
