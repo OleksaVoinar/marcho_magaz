@@ -1,6 +1,7 @@
 @import "vars";
 @import "fonts";
 @import "reset";
+@import "libs";
 @import "global";
 
 
@@ -30,16 +31,20 @@
     color: $title;
     text-transform: uppercase;
     transition: all 0.4s;
+    @extend %roboto-400;
 
     &:hover {
       color: $accent;
       border-bottom: solid 1px $accent;
+      @extend %roboto-700;
+
     }
   }
 
   &__list-link--active {
     color: $accent;
     border-bottom: solid 1px $accent;
+    @extend %roboto-700;
   }
 
 }
@@ -71,10 +76,143 @@
   }
 }
 
+.top-slider {
+  background-image: url(../images/slider_bg.jpg);
+  background-repeat: no-repeat;
+  padding-top: 65px;
+  padding-bottom: 44px;
+
+  &__container {
+    max-width: 1560px;
+  }
+
+  &__content {
+    padding-left: 170px;
+    padding-top: 125px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    max-width: 670px;
+    font-size: 58px;
+    line-height: 68px;
+    @extend%roboto-700;
+    margin-bottom: 34px;
+    color: $title;
+  }
+
+  &__text {
+    margin-bottom: 55px;
+    max-width: 470px;
+  }
+
+  &__link {
+    @extend%btn;
+    padding: 14px 26px;
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+
+    li {
+      margin-right: 5px;
+
+      button {
+        font-size: 0;
+        border: none;
+        background-color: transparent;
+        width: 26px;
+        height: 26px;
+        border: 1px solid transparent;
+        position: relative;
+        outline: none;
+
+        &:before {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          background-color: #8d8d8d;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &.slick-active {
+        button {
+          border-color: $accent;
+          outline: none;
+          border-radius: 50%;
+
+          &:before {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+  }
+
+  // .slick-dots button {
+  //   font-size: 0;
+  //   max-width: 6px;
+  //   max-height: 6px;
+  //   border-radius: 100%;
+  //   background-color: #8d8d8d;
+  //   border: none;
+  //   margin-right: 30px;
+  // }
+
+  // .slick-active button {
+  // font-size: 0;
+  // width: 30px;
+  // height: 30px;
+  // border: solid $accent 1px;
+  // border-radius: 50%;
+  // }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .footer {
   background-color: $bg;
-
-  
 }
 
 .footer-top {
@@ -155,13 +293,9 @@
   }
 
   &__form-btn {
-    color: #ffffff;
-    padding: 10px 20px;
-    text-transform: uppercase;
+    @extend%btn;
     border: none;
-    background-color: $accent;
     cursor: pointer;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
   }
 }
 
